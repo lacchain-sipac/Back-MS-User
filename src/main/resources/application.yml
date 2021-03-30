@@ -1,0 +1,22 @@
+server:
+  port: ${PORT_SERVER}
+
+---
+springbootwebfluxjjwt:
+  password:
+    encoder:
+      secret: ${SECRET}
+      iteration: ${ITERATION}
+      keylength: ${KEY_LENGTH}
+---
+spring:
+  profiles: default
+  data:
+    mongodb:
+        uri: ${CONEXION_MONGO}/hondurasdb
+  redis:
+    host: ${RHOST}
+    port: 6379
+---
+configuration:
+  privateKeyBackend: ${PRIVATE_KEY_BACKEND}
